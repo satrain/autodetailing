@@ -1,0 +1,1 @@
+<?php /* 'Backup page' for the homepage ?>
