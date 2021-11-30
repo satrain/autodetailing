@@ -44,12 +44,12 @@
 .booking-icons-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .booking-field-icon-main {
     width: 200px;
     height: 100px;
+    margin: 0 5px;
 }
 
 .booking-icons-wrapper .booking-field-icon {
@@ -92,6 +92,7 @@
     width: 200px;
     height: 100px;
     background: white;
+    margin: 0 5px;
     margin-bottom: 40px;
 }
 
@@ -126,10 +127,12 @@
 }
 
 
-.select-size-wrapper {
+.select-size-wrapper,
+.select-package-wrapper,
+.select-condition-wrapper,
+.select-extras-wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 /* POPUP */
@@ -153,6 +156,9 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    background: #fff;
+    min-width: 500px;
+    min-height: 300px;
 }
 
 .exit-popup {
@@ -160,7 +166,22 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
-    background: #fff;
+    background: #eee;
     font-size: 30px;
     padding: 10px;
+}
+
+.select-size-wrapper .info-icon,
+.select-condition-wrapper .info-icon {
+    display: none;
+}
+
+/* KALKULATOR SIDEBAR */
+
+.booking-calculator > hr{
+    margin: 20px 0;
+}
+
+.actual-calculator {
+    height: 400px;
 }
