@@ -53,6 +53,7 @@ get_header();
                 </div>
                 <div class="other-chosen-options">
                     <p>Other vehicles</p>
+                    <p>Test push</p>
                 </div>
             </div>
         </div>
