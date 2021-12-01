@@ -1,7 +1,7 @@
 // POSTOJE 3 OSNOVNA DELOVA OVOG KODA
 // STRUKTURA JE TAKVA DA ZA SVAKU OD SEKCIJA KOJE SE PRIKAZUJU KADA JE SELEKTOVAN AUTO NA IKONICI
 // POSTOJE 3 DELA: 
-// -array sa informacijama(objektima), 
+// - array sa informacijama(objektima), 
 // - for petlja pri kraju koda koja omogucava info box(popup) (https://prnt.sc/2159so1) i 
 // - njihova funkcija za selektovanje
 
@@ -13,22 +13,25 @@ const mainVehicleTypes = [
         name: "Auto",
         iconClasses: "fas fa-car",
         id: "auto",
-        content: `<h1>Cao svima</h1>`
+        price: 100.00
     },
     {
         name: "RV",
         iconClasses: "fas fa-bus",
-        id: "rv"
+        id: "rv",
+        price: 20.00
     },
     {
         name: "Boat",
         iconClasses: "fas fa-ship",
-        id: "boat"
+        id: "boat",
+        price: 30.00
     },
     {
         name: "Bike",
         iconClasses: "fas fa-motorcycle",
-        id: "bike"
+        id: "bike",
+        price: 80.00
     }
 ]
 
@@ -123,6 +126,7 @@ function displayCardsSelectSize() {
         selectSizeWrapper.innerHTML = current + createSingleCard(cardsSelectSize[i])
     }
 }
+
 displayCardsSelectSize();
 
 
@@ -495,7 +499,7 @@ function findXs() {
 
 findXs()
 
-// CEKIRANJE KLIKNUTOG i (info) POLJA SA KONTENTOM ZA POPUP - ZA SVAKU OD 3 SEKCIJA PO JEDAN FOR
+// CEKIRANJE KLIKNUTOG i (info) POLJA SA KONTENTOM ZA POPUP - ZA SVAKU OD SEKCIJA PO JEDAN FOR
 for (let i = 0; i < infoIs.length; i++) {
     infoIs[i].addEventListener("click", () => {
         // console.log(infoIs[i].parentElement.parentElement.id)
@@ -553,4 +557,90 @@ for (let i = 0; i < bookingFieldIcon.length; i++) {
 }
 
 
+
+
+
+// ACTUAL CALCULATOR FUNCTION CALCULATE
+const korpa = [
+
+];
+
+
+
+// funkcija za update-ovanje ukupne svote novca
+function updateTotal() {
+    let subTotal = 0;
+    let salesTax = 0;
+
+    for (let i = 0; i < korpa.length; i++) {
+        subTotal += korpa[i].price
+    }
+
+    salesTax = subTotal * 10.3 / 100
+
+    document.querySelector(".value-subtotal").innerHTML = "$" + subTotal.toFixed(2)
+    document.querySelector(".value-taxes").innerHTML = "$" + salesTax.toFixed(2)
+    document.querySelector(".value-total").innerHTML = "$" + (subTotal + salesTax).toFixed(2)
+}
+
+
+const calcTypeVehicle = document.querySelectorAll(".booking-field-icon-main")
+
+function getFirstMainLiItem(itemId, className, parentClassName) {
+    let id = itemId;
+    let childEl = document.createElement("div");
+    childEl.classList.add(className)
+    let parentEl = document.querySelector(parentClassName)
+
+    for (let i = 0; i < mainVehicleTypes.length; i++) {
+        if (mainVehicleTypes[i].id == id) {
+            let ispis = `
+            <div class="main-li-left"><i class="${mainVehicleTypes[i].iconClasses}"></i><p>${mainVehicleTypes[i].name}</p></div>
+            <div class="main-li-right">$${mainVehicleTypes[i].price.toFixed(2)}</div>`
+            childEl.innerHTML = ispis;
+
+
+            console.log(mainVehicleTypes[i])
+
+            if (korpa.length == 0) {
+                korpa.push(mainVehicleTypes[i])
+            } else {
+                korpa.length = 0
+                korpa.push(mainVehicleTypes[i])
+            }
+        }
+    }
+    parentEl.appendChild(childEl)
+}
+
+function removeAllChildren(className) {
+    let klasa = document.querySelector(className);
+    if (klasa.lastElementChild) {
+        let child = klasa.lastElementChild
+        while (child) {
+            klasa.removeChild(child)
+            child = klasa.lastElementChild
+        }
+    }
+}
+
+
+
+
+// POZIV ZA CALCULATE KADA SE ODABERE TIP VOZILA
+let lastI = -1;
+
+for (let i = 0; i < calcTypeVehicle.length; i++) {
+    calcTypeVehicle[i].addEventListener('click', () => {
+        if (lastI != i) {
+            removeAllChildren("#main-ul-first-child")
+            getFirstMainLiItem(calcTypeVehicle[i].id, "main-li-holder", "#main-ul-first-child")
+            updateTotal()
+
+
+            lastI = i;
+            // console.log(calcTypeVehicle[i].id, lastI)
+        }
+    })
+}
 
