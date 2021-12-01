@@ -81,6 +81,7 @@ get_header();
                             <div class="main-li-left"><i class="fas fa-home"></i><p>Default</p></div>
                             <div class="main-li-right">$100.00</div>
                         </div>
+
                         <ul class="secondary-ul">
                             <li class="secondary-li">
                                 <div class="secondary-content-left">1 Bathroom</div>

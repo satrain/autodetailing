@@ -211,8 +211,11 @@
 }
 
 /* SIDEBAR */
+#calculator-ul-main > li:nth-child(2) {
+    margin-top: 10px;
+}
 #main-ul-first-child {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .main-li-holder {
@@ -223,7 +226,7 @@
 }
 
 .secondary-ul {
-    padding: 10px 0px 10px 40px;
+    padding: 10px 0px 0px 40px;
 }
 
 .secondary-li {

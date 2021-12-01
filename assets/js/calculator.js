@@ -55,16 +55,17 @@ ispisMainVehicle()
 const cardsSelectSize = [
     {
         id: "two-door-coupe",
-        name: "2 door coupe",
+        name: "2 Door Coupe",
         iconClass: "fas fa-car",
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Ovo je nas najnoviji i najbolji proizvod"
-        }
+        },
+        price: 20.05
     },
     {
         id: "four-door-sedan",
-        name: "4 door sedan",
+        name: "4 Door Sedan",
         iconClass: "fas fa-ship",
         content: {
             imgSrc: "https://miro.medium.com/max/1152/1*Xt36eAsjJ3c_I4qpYWIDzA.png",
@@ -143,7 +144,8 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.cmaeurope.org/upload/public/images/webpage/Clubhouse/attention%20to%20detail.jpg",
             text: "Mini-detail detail"
-        }
+        },
+        price: 5.24
     },
     {
         id: "exterior-detail",
@@ -566,6 +568,18 @@ const korpa = [
 ];
 
 
+//funkcija za update-ovanje secondary-ul
+function updateProducts(array) {
+    let singleCards = array
+    let ids = [];
+
+    for (let i = 0; i < singleCards.length; i++) {
+        ids.push(singleCards[i].id)
+    }
+
+    // console.log(ids)
+}
+
 
 // funkcija za update-ovanje ukupne svote novca
 function updateTotal() {
@@ -583,34 +597,138 @@ function updateTotal() {
     document.querySelector(".value-total").innerHTML = "$" + (subTotal + salesTax).toFixed(2)
 }
 
+function mergeArrays(nameTypeVehicle) {
+    let name = nameTypeVehicle;
+    let array = [];
 
-const calcTypeVehicle = document.querySelectorAll(".booking-field-icon-main")
+    if (name == "auto") {
+        for (let i = 0; i < cardsSelectSize.length; i++) {
+            array.push(cardsSelectSize[i])
+        }
+        for (let i = 0; i < cardsSelectPackage.length; i++) {
+            array.push(cardsSelectPackage[i])
+        }
+        for (let i = 0; i < cardsSelectCondition.length; i++) {
+            array.push(cardsSelectCondition[i])
+        }
+        for (let i = 0; i < cardsSelectExtras.length; i++) {
+            array.push(cardsSelectExtras[i])
+        }
+    }
+
+    return array;
+}
+
+
 
 function getFirstMainLiItem(itemId, className, parentClassName) {
     let id = itemId;
     let childEl = document.createElement("div");
     childEl.classList.add(className)
+
+    let childUl = document.createElement("ul")
+    childUl.classList.add("secondary-ul")
+
+    removeAllChildren(parentClassName)
     let parentEl = document.querySelector(parentClassName)
 
     for (let i = 0; i < mainVehicleTypes.length; i++) {
         if (mainVehicleTypes[i].id == id) {
+            console.log(id)
+
+            // na osnovu id-a ispisujemo kontent za sub-services
+            let activeSubIds = []
+            if (id == "auto") {
+                let allActiveSubServices = document.querySelectorAll("." + id + "-chosen-options .mainVehicleType-active")
+
+                let niz = mergeArrays("auto");
+                // console.log(niz, "autoniz")
+
+                if (allActiveSubServices.length > 0) {
+                    // console.log(allActiveSubServices)
+                    let arrayToPushIntoCart = []
+                    for (let j = 0; j < allActiveSubServices.length; j++) {
+
+                        // console.log(allActiveSubServices[j].parentElement.id)
+
+                        for (let k = 0; k < niz.length; k++) {
+                            if (niz[k].id == allActiveSubServices[j].parentElement.id) {
+                                // console.log(niz[k])
+                                arrayToPushIntoCart.push(niz[k])
+                            }
+                        }
+                        // activeSubIds.push(allActiveSubServices[i].parentElement.id)
+                    }
+                    console.log(arrayToPushIntoCart)
+
+                    for (let j = 0; j < arrayToPushIntoCart.length; j++) {
+                        // console.log(arrayToPushIntoCart[j])
+                        if (korpa.includes(arrayToPushIntoCart[j])) {
+                            console.log("Already exists into cart!")
+                        } else {
+                            korpa.push(arrayToPushIntoCart[j])
+                        }
+                    }
+
+                } else {
+                    console.log("No subservices")
+                }
+
+
+
+                korpa.forEach(obj => () => {
+
+                })
+
+                if (korpa.length == 1 || korpa.length == 0) {
+
+                } else {
+                    for (let i = 1; i < korpa.length; i++) {
+
+
+                        let singleLiTag = document.createElement("li")
+                        singleLiTag.classList.add("secondary-li")
+
+                        let objContent = `<div class="secondary-content-left">${korpa[i].name}</div>
+                        <div class="secondary-content-right">$${korpa[i].price}</div>`
+
+                        singleLiTag.innerHTML = objContent;
+                        childUl.appendChild(singleLiTag)
+
+
+
+                    }
+                }
+
+
+
+
+            }
+
+
             let ispis = `
             <div class="main-li-left"><i class="${mainVehicleTypes[i].iconClasses}"></i><p>${mainVehicleTypes[i].name}</p></div>
             <div class="main-li-right">$${mainVehicleTypes[i].price.toFixed(2)}</div>`
             childEl.innerHTML = ispis;
 
 
-            console.log(mainVehicleTypes[i])
 
             if (korpa.length == 0) {
+                // console.log(mainVehicleTypes[i])
+
                 korpa.push(mainVehicleTypes[i])
+
+                console.log(korpa)
             } else {
-                korpa.length = 0
-                korpa.push(mainVehicleTypes[i])
+                console.log(korpa)
+                console.log(korpa[0].id)
+                console.log(mainVehicleTypes[i].id)
             }
+
         }
     }
     parentEl.appendChild(childEl)
+    parentEl.appendChild(childUl)
 }
 
 function removeAllChildren(className) {
@@ -628,19 +746,37 @@ function removeAllChildren(className) {
 
 
 // POZIV ZA CALCULATE KADA SE ODABERE TIP VOZILA
+const calcTypeVehicle = document.querySelectorAll(".booking-field-icon-main")
+
 let lastI = -1;
 
 for (let i = 0; i < calcTypeVehicle.length; i++) {
     calcTypeVehicle[i].addEventListener('click', () => {
         if (lastI != i) {
-            removeAllChildren("#main-ul-first-child")
+
             getFirstMainLiItem(calcTypeVehicle[i].id, "main-li-holder", "#main-ul-first-child")
             updateTotal()
+
 
 
             lastI = i;
             // console.log(calcTypeVehicle[i].id, lastI)
         }
+    })
+}
+
+
+//POZIV ZA ODABIR SUB-SERVICES
+let subServices = document.querySelectorAll(".single-card")
+
+for (let i = 0; i < subServices.length; i++) {
+    subServices[i].addEventListener("click", () => {
+        console.log(subServices[i])
+        console.log(korpa)
+        updateTotal()
+        updateProducts(subServices)
+
+
     })
 }
 
