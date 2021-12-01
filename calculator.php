@@ -73,11 +73,71 @@ get_header();
             <h2>Booking Summary!</h2>
             <hr>
 
-            <div class="actual-calculator"></div>
+            <div class="actual-calculator">
 
+                <ul id="calculator-ul-main">
+                    <li id="main-ul-first-child">
+                        <div class="main-li-holder">
+                            <div class="main-li-left"><i class="fas fa-home"></i><p>Default</p></div>
+                            <div class="main-li-right">$100.00</div>
+                        </div>
+                        <ul class="secondary-ul">
+                            <li class="secondary-li">
+                                <div class="secondary-content-left">1 Bathroom</div>
+                                <div class="secondary-content-right">$0.00</div>
+                            </li>
+                            <li class="secondary-li">
+                                <div class="secondary-content-left">1 Kitchen</div>
+                                <div class="secondary-content-right">$0.00</div>
+                            </li>
+                        </ul>
+                    </li>
 
+                    <li>
+                        <div class="choose-date-left">
+                            <i class="fas fa-calendar"></i><p>Choose service date...</p>
+                        </div>
+                        <div class="choose-date-right"></div>
+                    </li>
+
+                    <li>
+                        <div class="one-time-left">
+                            <i class="fas fa-redo"></i><p>One Time</p>
+                        </div>
+                        <div class="one-time-right"></div>
+                    </li>
+
+                    <!-- <li class="main-ul-last-child">
+                        <div class="main-ul-last-child-content">
+                            <p>SUB-TOTAL $100.00</p>
+                            <p>SALES-TAX $10.30</p>
+                            <p>TOTAL $110.30</p>
+                        </div>
+                    </li> -->
+                </ul>
+
+            </div>
 
             <hr>
+
+            <ul>
+                <li class="calculator-bottom-ul-li" id="subtotal">
+                    <div class="key-subtotal">SUB-TOTAL</div>
+                    <div class="value-subtotal">$100.00</div>
+                </li>
+                <li class="calculator-bottom-ul-li" id="sales-taxes">
+                    <div class="key-taxes">SALES TAX</div>
+                    <div class="value-taxes">$10.30</div>
+                </li>
+                <li class="calculator-bottom-ul-li" id="total">
+                    <div class="key-total">TOTAL</div>
+                    <div class="value-total">$110.30</div>
+                </li>
+            </ul>
+
+
+            <button id="book-now">BOOK NOW</button>
+
         </div>
     </div>
 
