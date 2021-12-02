@@ -29,6 +29,8 @@
 }
 
 .booking-wrapper .booking-calculator {
+    position: fixed;
+    right: 10px;
     width: 30%;
     background: #eee;
 }
