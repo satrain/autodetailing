@@ -55,21 +55,25 @@ ispisMainVehicle()
 const cardsSelectSize = [
     {
         id: "two-door-coupe",
-        name: "2 door coupe",
+        name: "2 Door Coupe",
         iconClass: "fas fa-car",
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Ovo je nas najnoviji i najbolji proizvod"
-        }
+        },
+        price: 20.05,
+        sameClass: "select-size-item"
     },
     {
         id: "four-door-sedan",
-        name: "4 door sedan",
+        name: "4 Door Sedan",
         iconClass: "fas fa-ship",
         content: {
             imgSrc: "https://miro.medium.com/max/1152/1*Xt36eAsjJ3c_I4qpYWIDzA.png",
             text: "Ovo je nas DRUGI najnoviji i najbolji proizvod"
-        }
+        },
+        price: 20.05,
+        sameClass: "select-size-item"
     },
     {
         id: "crossover-mini-suv",
@@ -78,7 +82,9 @@ const cardsSelectSize = [
         content: {
             imgSrc: "https://media.istockphoto.com/photos/freedom-chains-that-transform-into-birds-charge-concept-picture-id1322104312?b=1&k=20&m=1322104312&s=170667a&w=0&h=VQyPkFkMKmo0e4ixjhiOLjiRs_ZiyKR_4SAsagQQdkk=",
             text: "Ako se ovo prikaze sve radi!"
-        }
+        },
+        price: 20.05,
+        sameClass: "select-size-item"
     },
     {
         id: "mid-size-SUV",
@@ -87,7 +93,9 @@ const cardsSelectSize = [
         content: {
             imgSrc: "",
             text: "M T"
-        }
+        },
+        price: 10.05,
+        sameClass: "select-size-item"
     },
     {
         id: "large-suv-minivan",
@@ -96,8 +104,10 @@ const cardsSelectSize = [
         content: {
             imgSrc: "",
             text: ""
-        }
-    },
+        },
+        price: 2.15,
+        sameClass: "select-size-item"
+    }
 
 ]
 
@@ -105,7 +115,7 @@ function createSingleCard(obj) {
     let object = obj;
 
     let ispis = `
-    <div id="${object.id}" class="single-card">
+    <div id="${object.id}" class="single-card ${object.sameClass}">
         <div class="single-card-inner-cont inner-icon">
             <i class="${object.iconClass}"></i>
             <div class="info-icon">i</div>
@@ -143,7 +153,9 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.cmaeurope.org/upload/public/images/webpage/Clubhouse/attention%20to%20detail.jpg",
             text: "Mini-detail detail"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-package-item"
     },
     {
         id: "exterior-detail",
@@ -152,7 +164,9 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.salesforce.com/content/dam/blogs/ca/Blog%20Posts/details-open-graph.jpg",
             text: "Exterior detail"
-        }
+        },
+        price: 20.15,
+        sameClass: "select-package-item"
     },
     {
         id: "interior-detail",
@@ -161,7 +175,9 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.cmaeurope.org/upload/public/images/webpage/Clubhouse/attention%20to%20detail.jpg",
             text: "Interior detail"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-package-item"
     },
     {
         id: "full-inside-outside-detail",
@@ -170,7 +186,9 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.salesforce.com/content/dam/blogs/ca/Blog%20Posts/details-open-graph.jpg",
             text: "Full inside/outside detail"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-package-item"
     },
     {
         id: "paint-correction",
@@ -179,7 +197,9 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.cmaeurope.org/upload/public/images/webpage/Clubhouse/attention%20to%20detail.jpg",
             text: "paint correction"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-package-item"
     },
     {
         id: "ceramic-coating",
@@ -188,7 +208,9 @@ const cardsSelectPackage = [
         content: {
             imgSrc: "https://www.salesforce.com/content/dam/blogs/ca/Blog%20Posts/details-open-graph.jpg",
             text: "ceramic coating"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-package-item"
     }
 ]
 
@@ -217,7 +239,9 @@ const cardsSelectCondition = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "New one mate!"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-condition-item"
     },
     {
         id: "condition-used",
@@ -226,7 +250,9 @@ const cardsSelectCondition = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Used!"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-condition-item"
     },
     {
         id: "condition-abused",
@@ -235,7 +261,9 @@ const cardsSelectCondition = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Abused!"
-        }
+        },
+        price: 2.15,
+        sameClass: "select-condition-item"
     }
 ]
 
@@ -266,7 +294,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Pet hair removal"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "hard-water-spot-removal",
@@ -275,7 +305,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Used!"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "headliner-steam-cleaning",
@@ -284,7 +316,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "headliner-steam-cleaning"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "scratch-removal",
@@ -293,7 +327,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Scratch Removal"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "excessive-crumbs-stains-removal",
@@ -302,7 +338,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "headliner-steam-cleaning"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "headlight-restoration",
@@ -311,7 +349,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Scratch Removal"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "engine-detailing",
@@ -320,7 +360,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "headliner-steam-cleaning"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "trim-restoration",
@@ -329,7 +371,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Trim Restoration"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "black-trim-restoration",
@@ -338,7 +382,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Black Trim Restoration"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     },
     {
         id: "ozone",
@@ -347,7 +393,9 @@ const cardsSelectExtras = [
         content: {
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "ozone is gut"
-        }
+        },
+        price: 2.15,
+        sameClass: ""
     }
 ]
 
@@ -566,6 +614,97 @@ const korpa = [
 ];
 
 
+//funkcija za update-ovanje secondary-ul
+function updateProducts(clickedItem) {
+    let item = clickedItem
+    let secondaryUl = document.querySelector(".secondary-ul")
+
+    let niz = mergeArrays("auto")
+
+
+    for (let i = 0; i < niz.length; i++) {
+
+        if (item.id == niz[i].id) {
+            console.log(niz[i], "objekat kliknutog el")
+            let klasa = niz[i].sameClass + "-li"
+
+
+
+            if (document.querySelector("." + klasa)) {
+
+                // check for the extras
+                if (klasa != "-li") {
+                    let secondaryLi = document.querySelector("." + klasa)
+
+                    console.log(secondaryLi.children[0].innerText, "obrisan")
+
+                    for (let j = 0; j < korpa.length; j++) {
+                        if (secondaryLi.children[0].innerText == korpa[j].name) {
+                            korpa.splice(korpa.indexOf(korpa[j]), 1)
+                        }
+                        console.log(korpa[j])
+                    }
+
+                    secondaryLi.remove()
+
+                } else {
+                    console.log("Extras kliknut")
+                    console.log(item.children[1].innerText)
+
+                    console.log(document.querySelectorAll(".-li"))
+
+                    let listExtrasCalc = document.querySelectorAll(".-li")
+
+                    for (let k = 0; k < listExtrasCalc.length; k++) {
+                        console.log(listExtrasCalc[k].children[0].innerText)
+                        if (item.children[1].innerText == listExtrasCalc[k].children[0].innerText) {
+
+                            console.log()
+                            for (let j = 0; j < korpa.length; j++) {
+                                if (listExtrasCalc[k].children[0].innerText == korpa[j].name) {
+                                    korpa.splice(korpa.indexOf(korpa[j]), 1)
+                                }
+                                console.log(korpa[j])
+                            }
+
+                            listExtrasCalc[k].remove()
+                            updateTotal()
+                            return
+                        }
+                    }
+                }
+
+
+            } else {
+
+            }
+
+
+
+            let singleLiTag = document.createElement("li")
+            singleLiTag.classList.add("secondary-li")
+            singleLiTag.classList.add(klasa)
+
+            let objContent = `<div class="secondary-content-left">${niz[i].name}</div>
+            <div class="secondary-content-right">$${niz[i].price}</div>`
+
+            singleLiTag.innerHTML = objContent;
+            secondaryUl.appendChild(singleLiTag)
+
+            korpa.push(niz[i])
+            updateTotal()
+
+        }
+
+    }
+
+
+
+
+
+
+}
+
 
 // funkcija za update-ovanje ukupne svote novca
 function updateTotal() {
@@ -584,33 +723,135 @@ function updateTotal() {
 }
 
 
-const calcTypeVehicle = document.querySelectorAll(".booking-field-icon-main")
+
+
+
+
+function mergeArrays(nameTypeVehicle) {
+    let name = nameTypeVehicle;
+    let array = [];
+
+    if (name == "auto") {
+        for (let i = 0; i < cardsSelectSize.length; i++) {
+            array.push(cardsSelectSize[i])
+        }
+        for (let i = 0; i < cardsSelectPackage.length; i++) {
+            array.push(cardsSelectPackage[i])
+        }
+        for (let i = 0; i < cardsSelectCondition.length; i++) {
+            array.push(cardsSelectCondition[i])
+        }
+        for (let i = 0; i < cardsSelectExtras.length; i++) {
+            array.push(cardsSelectExtras[i])
+        }
+    }
+
+    return array;
+}
+
+
 
 function getFirstMainLiItem(itemId, className, parentClassName) {
     let id = itemId;
     let childEl = document.createElement("div");
     childEl.classList.add(className)
+
+    let childUl = document.createElement("ul")
+    childUl.classList.add("secondary-ul")
+
+    removeAllChildren(parentClassName)
     let parentEl = document.querySelector(parentClassName)
 
     for (let i = 0; i < mainVehicleTypes.length; i++) {
         if (mainVehicleTypes[i].id == id) {
+            console.log(id)
+            let arrayToPushIntoCart = []
+
+            // na osnovu id-a ispisujemo kontent za sub-services
+            let activeSubIds = []
+            if (id == "auto") {
+                let allActiveSubServices = document.querySelectorAll("." + id + "-chosen-options .mainVehicleType-active")
+
+                let niz = mergeArrays("auto");
+                // console.log(niz, "autoniz")
+
+                if (allActiveSubServices.length > 0) {
+                    // console.log(allActiveSubServices)
+                    for (let j = 0; j < allActiveSubServices.length; j++) {
+
+                        // console.log(allActiveSubServices[j].parentElement.id)
+
+                        for (let k = 0; k < niz.length; k++) {
+                            if (niz[k].id == allActiveSubServices[j].parentElement.id) {
+                                // console.log(niz[k])
+                                arrayToPushIntoCart.push(niz[k])
+                            }
+                        }
+                        // activeSubIds.push(allActiveSubServices[i].parentElement.id)
+                    }
+                    console.log(arrayToPushIntoCart, "ovo je mladenov consolelog")
+
+                    for (let j = 0; j < arrayToPushIntoCart.length; j++) {
+                        // console.log(arrayToPushIntoCart[j])
+                        if (korpa.includes(arrayToPushIntoCart[j])) {
+                            console.log("Already exists into cart!")
+                        } else {
+                            korpa.push(arrayToPushIntoCart[j])
+                        }
+                    }
+
+                } else {
+                    console.log("No subservices")
+                }
+
+
+                if (korpa.length == 1 || korpa.length == 0) {
+
+                } else {
+                    for (let i = 0; i < arrayToPushIntoCart.length; i++) {
+
+                        let singleLiTag = document.createElement("li")
+                        singleLiTag.classList.add("secondary-li")
+                        singleLiTag.classList.add(arrayToPushIntoCart[i].sameClass + "-li")
+
+                        let objContent = `<div class="secondary-content-left">${arrayToPushIntoCart[i].name}</div>
+                        <div class="secondary-content-right">$${arrayToPushIntoCart[i].price}</div>`
+
+                        singleLiTag.innerHTML = objContent;
+                        childUl.appendChild(singleLiTag)
+
+                    }
+                }
+
+
+
+
+            }
+
+
             let ispis = `
             <div class="main-li-left"><i class="${mainVehicleTypes[i].iconClasses}"></i><p>${mainVehicleTypes[i].name}</p></div>
             <div class="main-li-right">$${mainVehicleTypes[i].price.toFixed(2)}</div>`
             childEl.innerHTML = ispis;
 
 
-            console.log(mainVehicleTypes[i])
 
             if (korpa.length == 0) {
+                // console.log(mainVehicleTypes[i])
+
                 korpa.push(mainVehicleTypes[i])
+
+                console.log(korpa)
             } else {
-                korpa.length = 0
-                korpa.push(mainVehicleTypes[i])
+                console.log(korpa)
+                console.log(korpa[0].id)
+                console.log(mainVehicleTypes[i].id)
             }
+
         }
     }
     parentEl.appendChild(childEl)
+    parentEl.appendChild(childUl)
 }
 
 function removeAllChildren(className) {
@@ -625,22 +866,58 @@ function removeAllChildren(className) {
 }
 
 
+function ispisSecondaryLiItem(array) {
+    let myArray = array
+    let secondaryUl = document.querySelector(".secondary-ul")
+    for (let i = 0; i < myArray.length; i++) {
+
+
+        let singleLiTag = document.createElement("li")
+        singleLiTag.classList.add("secondary-li")
+
+        let objContent = `<div class="secondary-content-left">${myArray[i].name}</div>
+        <div class="secondary-content-right">$${myArray[i].price}</div>`
+
+        singleLiTag.innerHTML = objContent;
+        secondaryUl.appendChild(singleLiTag)
+
+    }
+}
+
+
 
 
 // POZIV ZA CALCULATE KADA SE ODABERE TIP VOZILA
+const calcTypeVehicle = document.querySelectorAll(".booking-field-icon-main")
+
 let lastI = -1;
 
 for (let i = 0; i < calcTypeVehicle.length; i++) {
     calcTypeVehicle[i].addEventListener('click', () => {
         if (lastI != i) {
-            removeAllChildren("#main-ul-first-child")
+
             getFirstMainLiItem(calcTypeVehicle[i].id, "main-li-holder", "#main-ul-first-child")
             updateTotal()
+
 
 
             lastI = i;
             // console.log(calcTypeVehicle[i].id, lastI)
         }
+    })
+}
+
+
+//POZIV ZA ODABIR SUB-SERVICES
+let subServices = document.querySelectorAll(".single-card")
+
+for (let i = 0; i < subServices.length; i++) {
+    subServices[i].addEventListener("click", () => {
+        console.log(korpa)
+        updateTotal()
+        updateProducts(subServices[i])
+
+
     })
 }
 
