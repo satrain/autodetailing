@@ -33,7 +33,7 @@ get_header();
                         <p>NameOfTheCard</p>
                     </div> -->
 
-                    <div class="auto-chosen-options choosing-option">
+                    <div id="auto-chosen-options" class="auto-chosen-options choosing-option">
                         <div class="booking-field size-of-vehicle">
                             <h3>Select size of your vehicle</h3>
                             <div class="select-size-wrapper"></div>
@@ -55,11 +55,11 @@ get_header();
                         </div>
                     </div>
 
-                    <div class="rv-chosen-options choosing-option">rv-chosen-options</div> 
+                    <div id="rv-chosen-options" class="rv-chosen-options choosing-option">rv-chosen-options</div> 
 
-                    <div class="boat-chosen-options choosing-option">boat-chosen-options</div>   
+                    <div id="boat-chosen-options" class="boat-chosen-options choosing-option">boat-chosen-options</div>   
 
-                    <div class="bike-chosen-options choosing-option">bike-chosen-options</div>                
+                    <div id="bike-chosen-options" class="bike-chosen-options choosing-option">bike-chosen-options</div>                
 
                     <!-- <div class="other-chosen-options">
                         <p>Other vehicles</p>

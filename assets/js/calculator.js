@@ -240,7 +240,7 @@ const cardsSelectCondition = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "New one mate!"
         },
-        price: 2.15,
+        price: 0.00,
         sameClass: "select-condition-item"
     },
     {
@@ -251,7 +251,7 @@ const cardsSelectCondition = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Used!"
         },
-        price: 2.15,
+        price: 3.00,
         sameClass: "select-condition-item"
     },
     {
@@ -262,7 +262,7 @@ const cardsSelectCondition = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Abused!"
         },
-        price: 2.15,
+        price: 5.00,
         sameClass: "select-condition-item"
     }
 ]
@@ -295,7 +295,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Pet hair removal"
         },
-        price: 2.15,
+        price: 4.52,
         sameClass: ""
     },
     {
@@ -306,7 +306,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Used!"
         },
-        price: 2.15,
+        price: 3.85,
         sameClass: ""
     },
     {
@@ -317,7 +317,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "headliner-steam-cleaning"
         },
-        price: 2.15,
+        price: 17.50,
         sameClass: ""
     },
     {
@@ -328,7 +328,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Scratch Removal"
         },
-        price: 2.15,
+        price: 4.00,
         sameClass: ""
     },
     {
@@ -339,7 +339,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "headliner-steam-cleaning"
         },
-        price: 2.15,
+        price: 8.00,
         sameClass: ""
     },
     {
@@ -350,7 +350,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Scratch Removal"
         },
-        price: 2.15,
+        price: 3.75,
         sameClass: ""
     },
     {
@@ -361,7 +361,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "headliner-steam-cleaning"
         },
-        price: 2.15,
+        price: 12.15,
         sameClass: ""
     },
     {
@@ -383,7 +383,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "Black Trim Restoration"
         },
-        price: 2.15,
+        price: 9.25,
         sameClass: ""
     },
     {
@@ -394,7 +394,7 @@ const cardsSelectExtras = [
             imgSrc: "https://tubecabolivia.com/wp-content/uploads/2019/12/imggg.png",
             text: "ozone is gut"
         },
-        price: 2.15,
+        price: 5.15,
         sameClass: ""
     }
 ]
@@ -552,28 +552,42 @@ for (let i = 0; i < infoIs.length; i++) {
     infoIs[i].addEventListener("click", () => {
         // console.log(infoIs[i].parentElement.parentElement.id)
         let id = infoIs[i].parentElement.parentElement.id
+        let parentWrapperFullId = infoIs[i].parentElement.parentElement.parentElement.parentElement.parentElement.id
 
-        for (let j = 0; j < cardsSelectSize.length; j++) {
-            if (id == cardsSelectSize[j].id) {
-                fillContentPopup(cardsSelectSize[j].content.imgSrc, cardsSelectSize[j].content.text)
+        let parentIdArray = parentWrapperFullId.split("-")
+        let parentId = parentIdArray[0]
 
+
+
+        let niz = mergeArrays(parentId);
+
+        for (let j = 0; j < niz.length; j++) {
+            if (id == niz[j].id) {
+                fillContentPopup(niz[j].content.imgSrc, niz[j].content.text)
             }
         }
-        for (let j = 0; j < cardsSelectPackage.length; j++) {
-            if (id == cardsSelectPackage[j].id) {
-                fillContentPopup(cardsSelectPackage[j].content.imgSrc, cardsSelectPackage[j].content.text)
-            }
-        }
-        for (let j = 0; j < cardsSelectCondition.length; j++) {
-            if (id == cardsSelectCondition[j].id) {
-                fillContentPopup(cardsSelectCondition[j].content.imgSrc, cardsSelectCondition[j].content.text)
-            }
-        }
-        for (let j = 0; j < cardsSelectExtras.length; j++) {
-            if (id == cardsSelectExtras[j].id) {
-                fillContentPopup(cardsSelectExtras[j].content.imgSrc, cardsSelectExtras[j].content.text)
-            }
-        }
+
+        // for (let j = 0; j < cardsSelectSize.length; j++) {
+        //     if (id == cardsSelectSize[j].id) {
+        //         fillContentPopup(cardsSelectSize[j].content.imgSrc, cardsSelectSize[j].content.text)
+
+        //     }
+        // }
+        // for (let j = 0; j < cardsSelectPackage.length; j++) {
+        //     if (id == cardsSelectPackage[j].id) {
+        //         fillContentPopup(cardsSelectPackage[j].content.imgSrc, cardsSelectPackage[j].content.text)
+        //     }
+        // }
+        // for (let j = 0; j < cardsSelectCondition.length; j++) {
+        //     if (id == cardsSelectCondition[j].id) {
+        //         fillContentPopup(cardsSelectCondition[j].content.imgSrc, cardsSelectCondition[j].content.text)
+        //     }
+        // }
+        // for (let j = 0; j < cardsSelectExtras.length; j++) {
+        //     if (id == cardsSelectExtras[j].id) {
+        //         fillContentPopup(cardsSelectExtras[j].content.imgSrc, cardsSelectExtras[j].content.text)
+        //     }
+        // }
         document.querySelector(".popup-container").style.display = "flex"
     })
 }
@@ -615,11 +629,11 @@ const korpa = [
 
 
 //funkcija za update-ovanje secondary-ul
-function updateProducts(clickedItem) {
+function updateProducts(clickedItem, mergeNizIme) {
     let item = clickedItem
     let secondaryUl = document.querySelector(".secondary-ul")
 
-    let niz = mergeArrays("auto")
+    let niz = mergeArrays(mergeNizIme)
 
 
     for (let i = 0; i < niz.length; i++) {
@@ -764,7 +778,7 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
 
     for (let i = 0; i < mainVehicleTypes.length; i++) {
         if (mainVehicleTypes[i].id == id) {
-            console.log(id)
+            // console.log(id)
             let arrayToPushIntoCart = []
 
             // na osnovu id-a ispisujemo kontent za sub-services
@@ -915,9 +929,8 @@ for (let i = 0; i < subServices.length; i++) {
     subServices[i].addEventListener("click", () => {
         console.log(korpa)
         updateTotal()
-        updateProducts(subServices[i])
+        updateProducts(subServices[i], "auto")
 
 
     })
 }
-
