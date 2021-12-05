@@ -57,9 +57,30 @@ get_header();
 
                     <div id="rv-chosen-options" class="rv-chosen-options choosing-option">rv-chosen-options</div> 
 
-                    <div id="boat-chosen-options" class="boat-chosen-options choosing-option">boat-chosen-options</div>   
+                    <div id="boat-chosen-options" class="boat-chosen-options choosing-option">
+                        <div class="booking-field size-of-boat">
+                            <h3>Select size of your vehicle</h3>
+                            <div class="select-size-boat-wrapper"></div>
+                        </div>
 
-                    <div id="bike-chosen-options" class="bike-chosen-options choosing-option">bike-chosen-options</div>                
+                        <div class="booking-field package">
+                            <h3>Select package</h3>
+                            <div class="select-package-wrapper"></div>
+                        </div>
+
+                        <div class="booking-field condition">
+                            <h3>Select condition</h3>
+                            <div class="select-condition-wrapper"></div>
+                        </div>
+
+                        <div class="booking-field condition">
+                            <h3>ADD EXTRAS</h3>
+                            <div class="select-extras-wrapper"></div>
+                        </div>
+
+                    </div>   
+
+                    <div id="bike-chosen-options" class="bike-chosen-options choosing-option"><strong style="font-size: 30px;">Price is depending on the size and condition of the bike</strong></div>                
 
                     <!-- <div class="other-chosen-options">
                         <p>Other vehicles</p>
@@ -69,6 +90,7 @@ get_header();
 
             </div>
         </div>
+
         <div class="booking-calculator">
             <h2>Booking Summary!</h2>
             <hr>
@@ -79,16 +101,16 @@ get_header();
                     <li id="main-ul-first-child">
                         <div class="main-li-holder">
                             <div class="main-li-left"><i class="fas fa-home"></i><p>Default</p></div>
-                            <div class="main-li-right">$100.00</div>
+                            <div class="main-li-right">$100</div>
                         </div>
 
                         <ul class="secondary-ul">
                             <li class="secondary-li">
-                                <div class="secondary-content-left">1 Bathroom</div>
+                                <div class="secondary-content-left">Size</div>
                                 <div class="secondary-content-right">$0.00</div>
                             </li>
                             <li class="secondary-li">
-                                <div class="secondary-content-left">1 Kitchen</div>
+                                <div class="secondary-content-left">Condition</div>
                                 <div class="secondary-content-right">$0.00</div>
                             </li>
                         </ul>
