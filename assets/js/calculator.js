@@ -419,52 +419,208 @@ displayCardsSelectExtras();
 
 // BOAT OBJECTS
 
-// const boatSize = [
-//     {
-//         id: "one-meter",
-//         name: "One meter",
-//         iconClass: "fas fa-hammer",
-//         content: {
-//             imgSrc: "",
-//             text: ""
-//         },
-//         price: 2.00,
-//         sameClass: ""
-//     },
-//     {
-//         id: "two-meter",
-//         name: "Two meter",
-//         iconClass: "fas fa-hammer",
-//         content: {
-//             imgSrc: "",
-//             text: ""
-//         },
-//         price: 3.00,
-//         sameClass: ""
-//     },
-//     {
-//         id: "more-than-two-meters",
-//         name: "More than two meters",
-//         iconClass: "fas fa-hammer",
-//         content: {
-//             imgSrc: "",
-//             text: ""
-//         },
-//         price: 5.00,
-//         sameClass: ""
-//     }
-// ]
+const boatSize = [
+    {
+        id: "boat-one-meter",
+        name: "One meter",
+        iconClass: "fas fa-hammer",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 2.00,
+        sameClass: "boat-size-item"
+    },
+    {
+        id: "boat-two-meter",
+        name: "Two meter",
+        iconClass: "fas fa-hammer",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 3.00,
+        sameClass: "boat-size-item"
+    },
+    {
+        id: "boat-more-than-two-meters",
+        name: "More than two meters",
+        iconClass: "fas fa-hammer",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 5.00,
+        sameClass: "boat-size-item"
+    }
+]
 
-// function displayBoatSize() {
-//     let selectExtrasWrapper = document.querySelector(".select-extras-wrapper")
+function displayBoatSize() {
+    let selectBoatSizeWrapper = document.querySelector(".select-size-boat-wrapper")
 
-//     for (let i = 0; i < cardsSelectExtras.length; i++) {
-//         let current = selectExtrasWrapper.innerHTML
-//         selectExtrasWrapper.innerHTML = current + createSingleCard(cardsSelectExtras[i])
-//     }
-// }
+    for (let i = 0; i < boatSize.length; i++) {
+        let current = selectBoatSizeWrapper.innerHTML
+        selectBoatSizeWrapper.innerHTML = current + createSingleCard(boatSize[i])
+    }
+}
 
-// displayBoatSize();
+displayBoatSize();
+
+
+
+
+
+const boatPackage = [
+    {
+        id: "boat-wash",
+        name: "Wash",
+        iconClass: "fas fa-hammer",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 2.00,
+        sameClass: "boat-package-item"
+    },
+    {
+        id: "boat-wash-and-wax",
+        name: "Wash and Wax",
+        iconClass: "fas fa-hammer",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 3.00,
+        sameClass: "boat-package-item"
+    },
+    {
+        id: "boat-restauration",
+        name: "Restauration",
+        iconClass: "fas fa-hammer",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 5.00,
+        sameClass: "boat-package-item"
+    }
+]
+
+function displayBoatPackage() {
+    let selectBoatPackageWrapper = document.querySelector(".select-package-boat-wrapper")
+
+    for (let i = 0; i < boatPackage.length; i++) {
+        let current = selectBoatPackageWrapper.innerHTML
+        selectBoatPackageWrapper.innerHTML = current + createSingleCard(boatPackage[i])
+    }
+}
+
+displayBoatPackage();
+
+
+
+
+
+
+
+
+
+
+// BOAT OBJECTS
+
+const rvSize = [
+    {
+        id: "rv-one-meter",
+        name: "One meter",
+        iconClass: "fas fa-egg",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 2.00,
+        sameClass: "rv-size-item"
+    },
+    {
+        id: "rv-two-meter",
+        name: "Two meter",
+        iconClass: "fas fa-egg",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 3.00,
+        sameClass: "rv-size-item"
+    },
+    {
+        id: "rv-more-than-two-meters",
+        name: "More than two meters",
+        iconClass: "fas fa-egg",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 5.00,
+        sameClass: "rv-size-item"
+    }
+]
+
+function displayRvSize() {
+    let selectRvSizeWrapper = document.querySelector(".select-size-rv-wrapper")
+
+    for (let i = 0; i < rvSize.length; i++) {
+        let current = selectRvSizeWrapper.innerHTML
+        selectRvSizeWrapper.innerHTML = current + createSingleCard(rvSize[i])
+    }
+}
+
+displayRvSize();
+
+const rvPackage = [
+    {
+        id: "rv-wash",
+        name: "Wash",
+        iconClass: "fas fa-egg",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 2.00,
+        sameClass: "rv-package-item"
+    },
+    {
+        id: "rv-wash-and-wax",
+        name: "Wash and Wax",
+        iconClass: "fas fa-egg",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 3.00,
+        sameClass: "rv-package-item"
+    },
+    {
+        id: "rv-restauration",
+        name: "Restauration",
+        iconClass: "fas fa-egg",
+        content: {
+            imgSrc: "",
+            text: ""
+        },
+        price: 5.00,
+        sameClass: "rv-package-item"
+    }
+]
+
+function displayRvPackage() {
+    let selectRvPackageWrapper = document.querySelector(".select-package-rv-wrapper")
+
+    for (let i = 0; i < rvPackage.length; i++) {
+        let current = selectRvPackageWrapper.innerHTML
+        selectRvPackageWrapper.innerHTML = current + createSingleCard(rvPackage[i])
+    }
+}
+
+displayRvPackage();
 
 
 
@@ -529,7 +685,8 @@ for (let i = 0; i < bookingIconsMain.length; i++) {
 
 
 
-// USING FUNCTION FROM MAIN TYPES TO IMPLEMENT ON SELECT SIZE, SELECT PACKAGE and SELECT CONDITION
+
+// USING FUNCTION FROM MAIN TYPES TO IMPLEMENT ON ALL OTHER SINGLE CARDS
 const bookingSelectSize = document.querySelectorAll(".select-size-wrapper .single-card")
 
 for (let i = 0; i < bookingSelectSize.length; i++) {
@@ -570,6 +727,62 @@ for (let i = 0; i < bookingSelectExtras.length; i++) {
 
     })
 }
+
+
+
+
+
+
+// KORISCENJE NOVE FUNKCIJE ZA RV
+const bookingRvSize = document.querySelectorAll(".select-size-rv-wrapper .single-card")
+
+for (let i = 0; i < bookingRvSize.length; i++) {
+    bookingRvSize[i].addEventListener("click", () => {
+        paintTheCards(i, bookingRvSize)
+
+    })
+}
+
+// KORISCENJE NOVE FUNKCIJE ZA BIKE
+const bookingRvPackage = document.querySelectorAll(".select-package-rv-wrapper .single-card")
+
+for (let i = 0; i < bookingRvPackage.length; i++) {
+    bookingRvPackage[i].addEventListener("click", () => {
+        paintTheCards(i, bookingRvPackage)
+
+    })
+}
+
+
+
+
+
+
+// KORISCENJE NOVE FUNKCIJE ZA BOAT
+const bookingBoatSize = document.querySelectorAll(".select-size-boat-wrapper .single-card")
+
+for (let i = 0; i < bookingBoatSize.length; i++) {
+    bookingBoatSize[i].addEventListener("click", () => {
+        paintTheCards(i, bookingBoatSize)
+
+    })
+}
+
+// KORISCENJE NOVE FUNKCIJE ZA BIKE
+const bookingBoatPackage = document.querySelectorAll(".select-package-boat-wrapper .single-card")
+
+for (let i = 0; i < bookingBoatPackage.length; i++) {
+    bookingBoatPackage[i].addEventListener("click", () => {
+        paintTheCards(i, bookingBoatPackage)
+
+    })
+}
+
+
+
+
+
+
 
 
 
@@ -805,8 +1018,22 @@ function mergeArrays(nameTypeVehicle) {
         }
     }
 
-    if (name == "rv") { }
-    if (name == "boat") { }
+    if (name == "rv") {
+        for (let i = 0; i < rvSize.length; i++) {
+            array.push(rvSize[i])
+        }
+        for (let i = 0; i < rvPackage.length; i++) {
+            array.push(rvPackage[i])
+        }
+    }
+    if (name == "boat") {
+        for (let i = 0; i < boatSize.length; i++) {
+            array.push(boatSize[i])
+        }
+        for (let i = 0; i < boatPackage.length; i++) {
+            array.push(boatPackage[i])
+        }
+    }
 
 
     return array;
@@ -894,7 +1121,7 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
                     singleLiTag.classList.add(arrayToPushIntoCart[i].sameClass + "-li")
 
                     let objContent = `<div class="secondary-content-left">${arrayToPushIntoCart[i].name}</div>
-                        <div class="secondary-content-right">$${arrayToPushIntoCart[i].price}</div>`
+                        <div class="secondary-content-right">$${arrayToPushIntoCart[i].price.toFixed(2)}</div>`
 
                     singleLiTag.innerHTML = objContent;
                     childUl.appendChild(singleLiTag)
