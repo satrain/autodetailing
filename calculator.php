@@ -55,7 +55,17 @@ get_header();
                         </div>
                     </div>
 
-                    <div id="rv-chosen-options" class="rv-chosen-options choosing-option">rv-chosen-options</div> 
+                    <div id="rv-chosen-options" class="rv-chosen-options choosing-option">
+                        <div class="booking-field size-of-rv">
+                            <h3>Select size of your vehicle</h3>
+                            <div class="select-size-rv-wrapper"></div>
+                        </div>
+
+                        <div class="booking-field package">
+                            <h3>Select package</h3>
+                            <div class="select-package-rv-wrapper"></div>
+                        </div>
+                    </div> 
 
                     <div id="boat-chosen-options" class="boat-chosen-options choosing-option">
                         <div class="booking-field size-of-boat">
@@ -65,19 +75,8 @@ get_header();
 
                         <div class="booking-field package">
                             <h3>Select package</h3>
-                            <div class="select-package-wrapper"></div>
+                            <div class="select-package-boat-wrapper"></div>
                         </div>
-
-                        <div class="booking-field condition">
-                            <h3>Select condition</h3>
-                            <div class="select-condition-wrapper"></div>
-                        </div>
-
-                        <div class="booking-field condition">
-                            <h3>ADD EXTRAS</h3>
-                            <div class="select-extras-wrapper"></div>
-                        </div>
-
                     </div>   
 
                     <div id="bike-chosen-options" class="bike-chosen-options choosing-option"><strong style="font-size: 30px;">Price is depending on the size and condition of the bike</strong></div>                
