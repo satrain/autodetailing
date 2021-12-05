@@ -50,9 +50,10 @@
 }
 
 .booking-field-icon-main {
-    width: 200px;
-    height: 100px;
+    width: 150px;
+    height: auto;
     margin: 0 5px;
+    margin-right: 5px;
 }
 
 .booking-icons-wrapper .booking-field-icon {
@@ -61,43 +62,64 @@
 
 .booking-field > h3 {
     margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #797979;
 }
 
 .booking-wrapper .inner-icon {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background: white;
     border: 3px solid #eee;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: .3s;
+}
+
+.booking-wrapper .inner-icon:hover {
+    border: 3px solid #F37C4C;
+    transition: .3s;
 }
 
 .booking-wrapper .inner-icon > i{ 
-    font-size: 60px;
+    font-size: 32px;
     color: #262626;
+    opacity: .15;
 }
 
-.inner-name-p {
+.inner-name-p,
+.single-card > p {
     text-align: center;
+    font-size: 14px;
+    margin-top: 3px;
+    color: #797979;
 }
 
 .booking-wrapper .inner-icon.mainVehicleType-active {
-    background: #262626;
-    border: 3px solid green;
+    background: #F37C4C;
+    border: 3px solid #F37C4C;
 }
 
 .booking-wrapper .inner-icon.mainVehicleType-active i {
     color: white;
+    opacity: 1;
+    transition: .3s;
+}
+
+.booking-wrapper .inner-icon.mainVehicleType-active .info-icon {
+    top: -3px;
+    right: -3px;
+    transition: .1s;
 }
 
 .single-card {
-    width: 200px;
-    height: 100px;
-    background: white;
+    width: 150px;
+    height: auto;
     margin: 0 5px;
     margin-bottom: 40px;
+    margin-left: 5px;
     position: relative;
 }
 
@@ -121,14 +143,15 @@
 }
 
 .info-icon {
-    font-size: 30px;
+    font-size: 20px;
     padding: 0px 10px;
-    color: white;
-    background: rgb(41, 60, 228);
+    color: #797979;
+    background: #eee;
     position: absolute;
     top: 0;
     right: 0;
     cursor: pointer;
+    font-style: italic;
 }
 
 
@@ -136,10 +159,10 @@
 .select-package-wrapper,
 .select-condition-wrapper,
 .select-extras-wrapper,
-.select-size-boat-wrapper,
-.select-package-boat-wrapper,
 .select-size-rv-wrapper,
-.select-package-rv-wrapper {
+.select-package-rv-wrapper,
+.select-size-boat-wrapper,
+.select-package-boat-wrapper {
     display: flex;
     flex-wrap: wrap;
 }
@@ -184,8 +207,8 @@
 
 .select-size-wrapper .info-icon,
 .select-condition-wrapper .info-icon,
-.select-size-boat-wrapper .info-icon,
-.select-size-rv-wrapper .info-icon {
+.select-size-rv-wrapper .info-icon,
+.select-size-boat-wrapper .info-icon {
     display: none;
 }
 
