@@ -185,12 +185,17 @@
 .popup-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: relative;
     background: #fff;
     min-width: 500px;
-    min-height: 300px;
+    min-height: 250px;
+    width: 500px;
+}
+
+.popup-content img {
+    width: 100%;
 }
 
 .exit-popup {
