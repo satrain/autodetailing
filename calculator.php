@@ -86,6 +86,30 @@ get_header();
                     </div> -->
                 </div>
                 
+                <div class="booking-personal-info">
+                    <div class="who-you-are-field">
+                        <h3>Who you are</h3>
+                        <h4>This information will be used to contact you about your service.</h4>
+                        <input type="text" name="fname" id="calc_fname" placeholder="Your First Name">
+                        <input type="text" name="lname" id="calc_lname" placeholder="Your Last Name">
+                        <input type="number" name="phonenum" id="calc_phone_num" placeholder="Your Phone Number">
+                        <input type="email" name="email" id="calc_email" placeholder="Your Email">
+                    </div>
+                    
+                    <div class="address-field">
+                        <h3>Address</h3>
+                        <h4>Where would you like us to come?</h4>
+                        <input type="text" name="address" id="calc_address" placeholder="Your Address">
+                    </div>
+                    
+                    <div class="special-instructions-field">
+                        <h3>Special Instructions</h3>
+                        <h4>Is there anything else we should know?</h4>
+                        <textarea name="specinstructions" id="calc_special_instructions" placeholder="Comments & Special Instructions"></textarea>
+                    </div> 
+
+                    <button id="book-now">BOOK NOW</button>
+                </div>
 
             </div>
         </div>
@@ -115,20 +139,6 @@ get_header();
                         </ul>
                     </li>
 
-                    <li>
-                        <div class="choose-date-left">
-                            <i class="fas fa-calendar"></i><p>Choose service date...</p>
-                        </div>
-                        <div class="choose-date-right"></div>
-                    </li>
-
-                    <li>
-                        <div class="one-time-left">
-                            <i class="fas fa-redo"></i><p>One Time</p>
-                        </div>
-                        <div class="one-time-right"></div>
-                    </li>
-
                     <!-- <li class="main-ul-last-child">
                         <div class="main-ul-last-child-content">
                             <p>SUB-TOTAL $100.00</p>
@@ -156,9 +166,6 @@ get_header();
                     <div class="value-total">$110.30</div>
                 </li>
             </ul>
-
-
-            <button id="book-now">BOOK NOW</button>
 
         </div>
     </div>
