@@ -79,7 +79,7 @@ get_header();
                         </div>
                     </div>   
 
-                    <div id="bike-chosen-options" class="bike-chosen-options choosing-option"><strong style="font-size: 30px;">Price is depending on the size and condition of the bike</strong></div>                
+                    <div id="bike-chosen-options" class="bike-chosen-options choosing-option"><strong style="font-size: 30px;">Price is depending on the size and condition of the bike</strong><br>Please fill out rest of fields below.</div>                
 
                     <!-- <div class="other-chosen-options">
                         <p>Other vehicles</p>

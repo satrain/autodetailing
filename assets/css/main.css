@@ -676,3 +676,22 @@ footer ul li a:hover {
     padding-bottom: 40px;
 }
 
+.page {
+    min-height: 600px;
+}
+
+.page-header {
+    width: 100%;
+    padding-top: 250px;
+    padding-bottom: 100px;
+    background: lightgreen;
+    background: url(/wp-content/uploads/2021/12/pexels-skylar-kang-6044794-scaled.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.page-header h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
