@@ -18,9 +18,9 @@
         <main>
             <header>
                 <div class="header-logo">
-                    <a href="/"><img src="/wp-content/uploads/2021/11/autodetailing-logo.png" alt="Auto Detailing Logo"></a>
+                    <a href="/"><img src="/wp-content/uploads/2021/10/autodetailing-logo.png" alt="Auto Detailing Logo"></a>
                 </div>
-                <div class="header-right-side">
+                <div class="header-right-side hide-xs">
                     <a class="btn btn-primary header-btn" href="#">Get a Quote</a>
                     <nav>
                         <?php
@@ -30,4 +30,15 @@
                         ?>
                     </nav>
                 </div>
+                <a href="#" class="hamburger-menu hide-d">|||</a>
             </header>
+
+            <div class="nav-mobile">
+                    <nav>
+                        <?php
+                            if(has_nav_menu('main_menu')) {
+                                wp_nav_menu(array('theme_location' => 'main_menu'));
+                            }
+                        ?>
+                    </nav>
+            </div>

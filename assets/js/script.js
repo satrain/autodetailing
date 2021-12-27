@@ -1,3 +1,9 @@
+// mobile navigation toggle
+let hamburger = document.querySelector('.hamburger-menu')
+hamburger.addEventListener('click', () => {
+    document.querySelector('.nav-mobile').style.display = "block"
+})
+
 // Slider - Testimonials
 (function () {
     var container = document.querySelector('#testimonials .wrapper'),
