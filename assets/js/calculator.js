@@ -126,6 +126,20 @@ function createSingleCard(obj) {
     return ispis;
 }
 
+function createInput(obj) {
+    let input = document.createElement("input")
+
+    input.type = "number";
+
+    let klaseInputa = obj.iconClass.split(" ");
+    for (let i = 0; i < klaseInputa.length; i++) {
+        input.classList.add(klaseInputa[i])
+    }
+
+
+    return input;
+}
+
 
 // SELECT SIZE FUNCTIONS TO DISPLAY
 function displayCardsSelectSize() {
@@ -421,47 +435,22 @@ displayCardsSelectExtras();
 
 const boatSize = [
     {
-        id: "boat-one-meter",
-        name: "One meter",
-        iconClass: "fas fa-hammer",
+        id: "boat-input",
+        name: "Size of your vehicle",
+        iconClass: "size-of-vehicle-input input-boat",
         content: {
             imgSrc: "",
             text: ""
         },
-        price: 2.00,
-        sameClass: "boat-size-item"
-    },
-    {
-        id: "boat-two-meter",
-        name: "Two meter",
-        iconClass: "fas fa-hammer",
-        content: {
-            imgSrc: "",
-            text: ""
-        },
-        price: 3.00,
-        sameClass: "boat-size-item"
-    },
-    {
-        id: "boat-more-than-two-meters",
-        name: "More than two meters",
-        iconClass: "fas fa-hammer",
-        content: {
-            imgSrc: "",
-            text: ""
-        },
-        price: 5.00,
+        price: 1.35,
+        coefficient: 1.35,
         sameClass: "boat-size-item"
     }
 ]
 
 function displayBoatSize() {
     let selectBoatSizeWrapper = document.querySelector(".select-size-boat-wrapper")
-
-    for (let i = 0; i < boatSize.length; i++) {
-        let current = selectBoatSizeWrapper.innerHTML
-        selectBoatSizeWrapper.innerHTML = current + createSingleCard(boatSize[i])
-    }
+    selectBoatSizeWrapper.appendChild(createInput(boatSize[0]));
 }
 
 displayBoatSize();
@@ -530,36 +519,15 @@ displayBoatPackage();
 
 const rvSize = [
     {
-        id: "rv-one-meter",
-        name: "One meter",
-        iconClass: "fas fa-egg",
+        id: "rv-input",
+        name: "Size of your vehicle",
+        iconClass: "size-of-vehicle-input input-rv",
         content: {
             imgSrc: "",
             text: ""
         },
-        price: 2.00,
-        sameClass: "rv-size-item"
-    },
-    {
-        id: "rv-two-meter",
-        name: "Two meter",
-        iconClass: "fas fa-egg",
-        content: {
-            imgSrc: "",
-            text: ""
-        },
-        price: 3.00,
-        sameClass: "rv-size-item"
-    },
-    {
-        id: "rv-more-than-two-meters",
-        name: "More than two meters",
-        iconClass: "fas fa-egg",
-        content: {
-            imgSrc: "",
-            text: ""
-        },
-        price: 5.00,
+        price: 1.15,
+        coefficient: 1.15,
         sameClass: "rv-size-item"
     }
 ]
@@ -567,10 +535,7 @@ const rvSize = [
 function displayRvSize() {
     let selectRvSizeWrapper = document.querySelector(".select-size-rv-wrapper")
 
-    for (let i = 0; i < rvSize.length; i++) {
-        let current = selectRvSizeWrapper.innerHTML
-        selectRvSizeWrapper.innerHTML = current + createSingleCard(rvSize[i])
-    }
+    selectRvSizeWrapper.appendChild(createInput(rvSize[0]));
 }
 
 displayRvSize();
@@ -734,16 +699,16 @@ for (let i = 0; i < bookingSelectExtras.length; i++) {
 
 
 // KORISCENJE NOVE FUNKCIJE ZA RV
-const bookingRvSize = document.querySelectorAll(".select-size-rv-wrapper .single-card")
+// const bookingRvSize = document.querySelectorAll(".select-size-rv-wrapper .single-card")
 
-for (let i = 0; i < bookingRvSize.length; i++) {
-    bookingRvSize[i].addEventListener("click", () => {
-        paintTheCards(i, bookingRvSize)
+// for (let i = 0; i < bookingRvSize.length; i++) {
+//     bookingRvSize[i].addEventListener("click", () => {
+//         paintTheCards(i, bookingRvSize)
 
-    })
-}
+//     })
+// }
 
-// KORISCENJE NOVE FUNKCIJE ZA BIKE
+// KORISCENJE NOVE FUNKCIJE ZA RV PACKAGE
 const bookingRvPackage = document.querySelectorAll(".select-package-rv-wrapper .single-card")
 
 for (let i = 0; i < bookingRvPackage.length; i++) {
@@ -946,6 +911,8 @@ function updateProducts(clickedItem, mergeNizIme) {
 
 
 
+
+
             let singleLiTag = document.createElement("li")
             singleLiTag.classList.add("secondary-li")
             singleLiTag.classList.add(klasa)
@@ -1046,6 +1013,7 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
     let childEl = document.createElement("div");
     childEl.classList.add(className)
 
+
     korpa.length = 0;
 
     for (let i = 0; i < mainVehicleTypes.length; i++) {
@@ -1077,6 +1045,30 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
 
 
             let allActiveSubServices = document.querySelectorAll("." + id + "-chosen-options .mainVehicleType-active")
+
+            if ((id == "rv" || id == "boat") && document.querySelector(".input-" + id).value != "") {
+                let inputValue = document.querySelector(".input-" + id).value;
+
+
+                //SADA MENJAMO PRICE OBJEKTA
+                if (id == "rv") {
+                    rvSize[0].price = inputValue * rvSize[0].coefficient
+                    korpa.push(rvSize[0])
+
+                    console.log(korpa)
+                }
+
+                if (id == "boat") {
+                    boatSize[0].price = inputValue * boatSize[0].coefficient
+                    korpa.push(boatSize[0])
+
+                    console.log(korpa)
+
+                }
+
+            }
+
+
 
             let niz = mergeArrays(id);
             // console.log(niz, "autoniz")
@@ -1212,6 +1204,64 @@ function getParentParentId(div) {
 
     return parentId
 }
+
+
+// EVENT LISTENERI ZA SIZE INPUTE
+document.querySelector(".input-rv").addEventListener("change", () => {
+    rvSize[0].price = document.querySelector(".input-rv").value * rvSize[0].coefficient
+
+    let korpaContains = false
+
+    for (let i = 0; i < korpa.length; i++) {
+        if (korpa[i].id == rvSize[0].id) {
+            korpaContains = true
+        }
+    }
+
+    if (korpaContains) {
+        for (let i = 0; i < korpa.length; i++) {
+            if (korpa[i].id == rvSize[0].id) {
+                korpa[i].price = rvSize[0].price
+            }
+        }
+    } else {
+        korpa.push(rvSize[0])
+    }
+
+
+    updateTotal()
+    console.log(korpa)
+})
+
+
+document.querySelector(".input-boat").addEventListener("change", () => {
+    boatSize[0].price = document.querySelector(".input-boat").value * boatSize[0].coefficient
+
+    let korpaContains = false
+
+    for (let i = 0; i < korpa.length; i++) {
+        if (korpa[i].id == boatSize[0].id) {
+            korpaContains = true
+        }
+    }
+
+    if (korpaContains) {
+        for (let i = 0; i < korpa.length; i++) {
+            if (korpa[i].id == boatSize[0].id) {
+                korpa[i].price = boatSize[0].price
+            }
+        }
+    } else {
+        korpa.push(boatSize[0])
+    }
+
+
+
+    updateTotal()
+    console.log(korpa)
+
+})
+
 
 
 

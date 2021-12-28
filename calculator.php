@@ -58,8 +58,6 @@ get_header();
                     <div id="rv-chosen-options" class="rv-chosen-options choosing-option">
                         <div class="booking-field size-of-rv">
                             <h3>Select size of your vehicle</h3>
-                            <label>Input</label>
-                            <input type="number" class="size-of-vehicle-input input-rv">
                             <div class="select-size-rv-wrapper"></div>
                         </div>
 
@@ -72,7 +70,6 @@ get_header();
                     <div id="boat-chosen-options" class="boat-chosen-options choosing-option">
                         <div class="booking-field size-of-boat">
                             <h3>Select size of your vehicle</h3>
-                            
                             <div class="select-size-boat-wrapper"></div>
                         </div>
 
