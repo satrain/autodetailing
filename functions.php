@@ -12,6 +12,9 @@ function enqueue_styles_and_scripts() {
 
     wp_register_script('main_script', get_template_directory_uri() . '/assets/js/script.js', array(), 1, 1, 1);
     wp_enqueue_script('main_script');
+
+    wp_register_script('testimonials_script', get_template_directory_uri() . '/assets/js/testimonials.js', array(), 1, 1, 1);
+    wp_enqueue_script('testimonials_script');
     
     wp_register_script('calculator_script', get_template_directory_uri() . '/assets/js/calculator.js', array(), 1, 1, 1);
     wp_enqueue_script('calculator_script');

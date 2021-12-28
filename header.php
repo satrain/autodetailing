@@ -32,13 +32,16 @@
                 </div>
                 <a href="#" class="hamburger-menu hide-d">|||</a>
             </header>
-
-            <div class="nav-mobile">
-                    <nav>
-                        <?php
-                            if(has_nav_menu('main_menu')) {
-                                wp_nav_menu(array('theme_location' => 'main_menu'));
-                            }
-                        ?>
-                    </nav>
+            
+            <div class="nav-mobile-overlay">
+                <div class="nav-mobile">
+                        <nav>
+                            <?php
+                                if(has_nav_menu('main_menu')) {
+                                    wp_nav_menu(array('theme_location' => 'main_menu'));
+                                }
+                            ?>
+                        </nav>
+                </div>
+                <span class="close-overlay">X</span>
             </div>
