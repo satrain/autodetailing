@@ -657,7 +657,6 @@ const bookingSelectSize = document.querySelectorAll(".select-size-wrapper .singl
 for (let i = 0; i < bookingSelectSize.length; i++) {
     bookingSelectSize[i].addEventListener("click", () => {
         paintTheCards(i, bookingSelectSize)
-
     })
 }
 
@@ -687,8 +686,11 @@ for (let i = 0; i < bookingSelectCondition.length; i++) {
 const bookingSelectExtras = document.querySelectorAll(".select-extras-wrapper .single-card")
 
 for (let i = 0; i < bookingSelectExtras.length; i++) {
-    bookingSelectExtras[i].addEventListener("click", () => {
-        paintTheCardsWithNoRemoveClass(i, bookingSelectExtras)
+    bookingSelectExtras[i].addEventListener("click", (e) => {
+        let infoBtn = bookingSelectExtras[i].querySelector('.info-icon')
+        if(e.target != infoBtn) {
+            paintTheCardsWithNoRemoveClass(i, bookingSelectExtras)
+        }
 
     })
 }

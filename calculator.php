@@ -123,8 +123,8 @@ get_header();
                 <ul id="calculator-ul-main">
                     <li id="main-ul-first-child">
                         <div class="main-li-holder">
-                            <div class="main-li-left"><i class="fas fa-home"></i><p>Default</p></div>
-                            <div class="main-li-right">$100</div>
+                            <div class="main-li-left"><i class="fas fa-car"></i><p>Vehicle type</p></div>
+                            <div class="main-li-right">$0.00</div>
                         </div>
 
                         <ul class="secondary-ul">
@@ -155,15 +155,15 @@ get_header();
             <ul>
                 <li class="calculator-bottom-ul-li" id="subtotal">
                     <div class="key-subtotal">SUB-TOTAL</div>
-                    <div class="value-subtotal">$100.00</div>
+                    <div class="value-subtotal">$0.00</div>
                 </li>
                 <li class="calculator-bottom-ul-li" id="sales-taxes">
                     <div class="key-taxes">SALES TAX</div>
-                    <div class="value-taxes">$10.30</div>
+                    <div class="value-taxes">$0.00</div>
                 </li>
                 <li class="calculator-bottom-ul-li" id="total">
                     <div class="key-total">TOTAL</div>
-                    <div class="value-total">$110.30</div>
+                    <div class="value-total">$0.00</div>
                 </li>
             </ul>
 
