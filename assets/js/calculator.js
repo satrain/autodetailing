@@ -964,8 +964,6 @@ function updateTotal() {
 
 
 
-
-
 function mergeArrays(nameTypeVehicle) {
     let name = nameTypeVehicle;
     let array = [];
@@ -1055,6 +1053,17 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
                     rvSize[0].price = inputValue * rvSize[0].coefficient
                     korpa.push(rvSize[0])
 
+                    let inputLiCalc = document.createElement("li")
+                    inputLiCalc.classList.add("secondary-li")
+                    inputLiCalc.classList.add(rvSize[0].sameClass + "-li")
+
+                    let inputVal = document.querySelector(".input-rv").value
+                    let outputLi = `<div class="secondary-content-left">${rvSize[0].name} - ${inputVal}ft</div><div class="secondary-content-right">$${rvSize[0].price.toFixed(2)}</div>`;
+
+                    inputLiCalc.innerHTML = outputLi
+
+                    childUl.appendChild(inputLiCalc)
+
                     console.log(korpa)
                 }
 
@@ -1062,11 +1071,25 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
                     boatSize[0].price = inputValue * boatSize[0].coefficient
                     korpa.push(boatSize[0])
 
-                    console.log(korpa)
+                    let inputLiCalc = document.createElement("li")
+                    inputLiCalc.classList.add("secondary-li")
+                    inputLiCalc.classList.add(boatSize[0].sameClass + "-li")
 
+                    let inputVal = document.querySelector(".input-boat").value
+                    let outputLi = `<div class="secondary-content-left">${boatSize[0].name} - ${inputVal}ft</div><div class="secondary-content-right">$${boatSize[0].price.toFixed(2)}</div>`;
+
+                    inputLiCalc.innerHTML = outputLi
+
+                    childUl.appendChild(inputLiCalc)
+
+                    console.log(korpa)
                 }
 
             }
+
+
+
+
 
 
 
@@ -1127,18 +1150,6 @@ function getFirstMainLiItem(itemId, className, parentClassName) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             let ispis = `
             <div class="main-li-left"><i class="${mainVehicleTypes[i].iconClasses}"></i><p>${mainVehicleTypes[i].name}</p></div>
             <div class="main-li-right">$${mainVehicleTypes[i].price}</div>`
@@ -1176,23 +1187,23 @@ function removeAllChildren(className) {
 }
 
 
-function ispisSecondaryLiItem(array) {
-    let myArray = array
-    let secondaryUl = document.querySelector(".secondary-ul")
-    for (let i = 0; i < myArray.length; i++) {
+// function ispisSecondaryLiItem(array) {
+//     let myArray = array
+//     let secondaryUl = document.querySelector(".secondary-ul")
+//     for (let i = 0; i < myArray.length; i++) {
 
 
-        let singleLiTag = document.createElement("li")
-        singleLiTag.classList.add("secondary-li")
+//         let singleLiTag = document.createElement("li")
+//         singleLiTag.classList.add("secondary-li")
 
-        let objContent = `<div class="secondary-content-left">${myArray[i].name}</div>
-        <div class="secondary-content-right">$${myArray[i].price}</div>`
+//         let objContent = `<div class="secondary-content-left">${myArray[i].name}</div>
+//         <div class="secondary-content-right">$${myArray[i].price}</div>`
 
-        singleLiTag.innerHTML = objContent;
-        secondaryUl.appendChild(singleLiTag)
+//         singleLiTag.innerHTML = objContent;
+//         secondaryUl.appendChild(singleLiTag)
 
-    }
-}
+//     }
+// }
 
 
 function getParentParentId(div) {
@@ -1208,7 +1219,8 @@ function getParentParentId(div) {
 
 // EVENT LISTENERI ZA SIZE INPUTE
 document.querySelector(".input-rv").addEventListener("change", () => {
-    rvSize[0].price = document.querySelector(".input-rv").value * rvSize[0].coefficient
+    let inputValue = document.querySelector(".input-rv").value
+    rvSize[0].price = inputValue * rvSize[0].coefficient
 
     let korpaContains = false
 
@@ -1222,11 +1234,34 @@ document.querySelector(".input-rv").addEventListener("change", () => {
         for (let i = 0; i < korpa.length; i++) {
             if (korpa[i].id == rvSize[0].id) {
                 korpa[i].price = rvSize[0].price
+
+                let inputLiCalc = document.querySelector(".rv-size-item-li")
+                let leftChildInputLiCalc = inputLiCalc.children[0]
+                let rightChildInputLiCalc = inputLiCalc.children[1]
+
+                leftChildInputLiCalc.innerHTML = `Size of your vehicle - ${inputValue}ft`
+                rightChildInputLiCalc.innerHTML = `$${rvSize[0].price.toFixed(2)}`
             }
         }
     } else {
         korpa.push(rvSize[0])
+
+        let childUl = document.querySelector(".secondary-ul")
+
+        let inputLiCalc = document.createElement("li")
+        inputLiCalc.classList.add("secondary-li")
+        inputLiCalc.classList.add(rvSize[0].sameClass + "-li")
+
+        let inputVal = document.querySelector(".input-rv").value
+        let outputLi = `<div class="secondary-content-left">${rvSize[0].name} - ${inputVal}ft</div><div class="secondary-content-right">$${rvSize[0].price.toFixed(2)}</div>`;
+
+        inputLiCalc.innerHTML = outputLi
+
+        childUl.appendChild(inputLiCalc)
+
     }
+
+
 
 
     updateTotal()
@@ -1235,7 +1270,8 @@ document.querySelector(".input-rv").addEventListener("change", () => {
 
 
 document.querySelector(".input-boat").addEventListener("change", () => {
-    boatSize[0].price = document.querySelector(".input-boat").value * boatSize[0].coefficient
+    let inputValue = document.querySelector(".input-boat").value
+    boatSize[0].price = inputValue * boatSize[0].coefficient
 
     let korpaContains = false
 
@@ -1249,10 +1285,30 @@ document.querySelector(".input-boat").addEventListener("change", () => {
         for (let i = 0; i < korpa.length; i++) {
             if (korpa[i].id == boatSize[0].id) {
                 korpa[i].price = boatSize[0].price
+
+                let inputLiCalc = document.querySelector(".boat-size-item-li")
+                let leftChildInputLiCalc = inputLiCalc.children[0]
+                let rightChildInputLiCalc = inputLiCalc.children[1]
+
+                leftChildInputLiCalc.innerHTML = `Size of your vehicle - ${inputValue}ft`
+                rightChildInputLiCalc.innerHTML = `$${boatSize[0].price.toFixed(2)}`
             }
         }
     } else {
         korpa.push(boatSize[0])
+
+        let childUl = document.querySelector(".secondary-ul")
+
+        let inputLiCalc = document.createElement("li")
+        inputLiCalc.classList.add("secondary-li")
+        inputLiCalc.classList.add(boatSize[0].sameClass + "-li")
+
+        let inputVal = document.querySelector(".input-boat").value
+        let outputLi = `<div class="secondary-content-left">${boatSize[0].name} - ${inputVal}ft</div><div class="secondary-content-right">$${boatSize[0].price.toFixed(2)}</div>`;
+
+        inputLiCalc.innerHTML = outputLi
+
+        childUl.appendChild(inputLiCalc)
     }
 
 
