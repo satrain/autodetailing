@@ -371,4 +371,23 @@
         text-align: center;
         margin-top: 10px;
     }
+
+    .booking-wrapper {
+        display: block;
+    }
+
+    .booking-wrapper .booking-form {
+        width: 100%;
+    }
+
+    .booking-wrapper .booking-calculator {
+        position: relative;
+        width: 100%;
+        margin-top: 30px;
+        right: unset;
+    }
+
+    .select-size-wrapper, .select-package-wrapper, .select-condition-wrapper, .select-extras-wrapper, .select-size-rv-wrapper, .select-package-rv-wrapper, .select-size-boat-wrapper, .select-package-boat-wrapper {
+        justify-content: center;
+    }
 }
