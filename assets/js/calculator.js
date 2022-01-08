@@ -1235,12 +1235,17 @@ document.querySelector(".input-rv").addEventListener("change", () => {
             if (korpa[i].id == rvSize[0].id) {
                 korpa[i].price = rvSize[0].price
 
-                let inputLiCalc = document.querySelector(".rv-size-item-li")
-                let leftChildInputLiCalc = inputLiCalc.children[0]
-                let rightChildInputLiCalc = inputLiCalc.children[1]
+                if (inputValue == "") {
+                    document.querySelector(".rv-size-item-li").remove()
+                } else {
+                    let inputLiCalc = document.querySelector(".rv-size-item-li")
+                    let leftChildInputLiCalc = inputLiCalc.children[0]
+                    let rightChildInputLiCalc = inputLiCalc.children[1]
 
-                leftChildInputLiCalc.innerHTML = `Size of your vehicle - ${inputValue}ft`
-                rightChildInputLiCalc.innerHTML = `$${rvSize[0].price.toFixed(2)}`
+                    leftChildInputLiCalc.innerHTML = `Size of your vehicle - ${inputValue}ft`
+                    rightChildInputLiCalc.innerHTML = `$${rvSize[0].price.toFixed(2)}`
+                }
+
             }
         }
     } else {
@@ -1286,12 +1291,17 @@ document.querySelector(".input-boat").addEventListener("change", () => {
             if (korpa[i].id == boatSize[0].id) {
                 korpa[i].price = boatSize[0].price
 
-                let inputLiCalc = document.querySelector(".boat-size-item-li")
-                let leftChildInputLiCalc = inputLiCalc.children[0]
-                let rightChildInputLiCalc = inputLiCalc.children[1]
+                if (inputValue == "") {
+                    document.querySelector(".boat-size-item-li").remove()
+                } else {
+                    let inputLiCalc = document.querySelector(".boat-size-item-li")
+                    let leftChildInputLiCalc = inputLiCalc.children[0]
+                    let rightChildInputLiCalc = inputLiCalc.children[1]
 
-                leftChildInputLiCalc.innerHTML = `Size of your vehicle - ${inputValue}ft`
-                rightChildInputLiCalc.innerHTML = `$${boatSize[0].price.toFixed(2)}`
+                    leftChildInputLiCalc.innerHTML = `Size of your vehicle - ${inputValue}ft`
+                    rightChildInputLiCalc.innerHTML = `$${boatSize[0].price.toFixed(2)}`
+                }
+
             }
         }
     } else {
@@ -1310,8 +1320,6 @@ document.querySelector(".input-boat").addEventListener("change", () => {
 
         childUl.appendChild(inputLiCalc)
     }
-
-
 
     updateTotal()
     console.log(korpa)
