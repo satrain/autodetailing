@@ -17,17 +17,17 @@
         <h2 class="section-h">why us</h2>
         <div class="container why-us-wrapper">
             <div class="why-us-item">
-                <img src="/wp-content/uploads/2021/10/mdi_account.png" alt="">
+                <img src="/wp-content/uploads/2022/01/mdi_account.png" alt="">
                 <h3>Lorem Ipsum</h3>
                 <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
             </div>
             <div class="why-us-item">
-                <img src="/wp-content/uploads/2021/10/mdi_car.png" alt="">
+                <img src="/wp-content/uploads/2022/01/mdi_car.png" alt="">
                 <h3>Est ce Que</h3>
                 <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
             </div>
             <div class="why-us-item">
-                <img src="/wp-content/uploads/2021/10/bpmn_service.png" alt="">
+                <img src="/wp-content/uploads/2022/01/bpmn_service.png" alt="">
                 <h3>Un Grande</h3>
                 <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
             </div>
