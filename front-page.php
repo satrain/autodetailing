@@ -164,7 +164,7 @@
     <div class="get-in-touch">
         <div class="container get-in-touch-wrapper">
             <h2 class="section-h">get in touch</h2>
-            <?php echo do_shortcode('[contact-form-7 id="32" title="Contact Form"]'); ?>
+            <?php echo do_shortcode('[contact-form-7 id="98" title="Contact Form"]'); ?>
         </div>
     </div>
 
