@@ -382,6 +382,9 @@ header nav ul li a {
     max-width: 456px;
     height: 425px;
 
+    margin-left: 10px;
+    margin-right: 10px;
+
     box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     cursor: pointer;
@@ -465,6 +468,8 @@ header nav ul li a {
     .choose-service-wrapper-bottom .service-item {
         margin-bottom: 30px;
         height: 360px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .choose-service-wrapper-bottom .service-item p {
