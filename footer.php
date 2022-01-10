@@ -4,7 +4,7 @@
                 <div>
                     <img src="/wp-content/uploads/2022/01/autodetailing-logo.png" width="243">
                     <p class="footer-call-us"><strong>Call Us:</strong> <a href="tel:(619) 892 2077">(619) 892 2077</a></p>
-                    <a href="#" class="btn btn-primary">Get a Quote</a>
+                    <a href="/price-calculator/" class="btn btn-primary">Get a Quote</a>
                 </div>
                 <div>
                     <ul>

@@ -8,7 +8,7 @@
         <div class="hero-copy">
             <h1>Lorem Ipsum is dummy text<span>.</span></h1>
             <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
-            <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
+            <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
         </div>
         <div class="hero-mock"></div>
     </div>
@@ -19,17 +19,17 @@
             <div class="why-us-item">
                 <img src="/wp-content/uploads/2022/01/mdi_account.png" alt="">
                 <h3>Lorem Ipsum</h3>
-                <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
+                <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
             </div>
             <div class="why-us-item">
                 <img src="/wp-content/uploads/2022/01/mdi_car.png" alt="">
                 <h3>Est ce Que</h3>
-                <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
+                <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
             </div>
             <div class="why-us-item">
                 <img src="/wp-content/uploads/2022/01/bpmn_service.png" alt="">
                 <h3>Un Grande</h3>
-                <p class="btn-p-wrapper"><a class="btn btn-primary" href="#">Get a Quote</a></p>
+                <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
                 <h2 class="section-h">choose service</h2>
             </div>
             <div class="choose-service-wrapper-bottom">
-                <div onclick="location.href='#'" class="service-item">
+                <div onclick="location.href='/services/'" class="service-item">
                     <p>Full Detailing</p>
                     <ul>
                         <li>List item One</li>
@@ -51,7 +51,7 @@
                     </ul>
                     <a class="btn btn-secondary" href="/services/">View More</a>
                 </div>
-                <div onclick="location.href='#'" class="service-item">
+                <div onclick="location.href='/services/'" class="service-item">
                     <p>Ceramic Coating</p>
                     <ul>
                         <li>List item One</li>
@@ -62,7 +62,7 @@
                     </ul>
                     <a class="btn btn-secondary" href="/services/">View More</a>
                 </div>
-                <div onclick="location.href='#'" class="service-item">
+                <div onclick="location.href='/services/'" class="service-item">
                     <p>PPF</p>
                     <ul>
                         <li>List item One</li>
@@ -79,7 +79,7 @@
 
     <div class="work-with-us-cta">
         <h2 class="section-h">work with us</h2>
-        <a href="#" class="btn btn-primary">Get a Quote</a>
+        <a href="/price-calculator/" class="btn btn-primary">Get a Quote</a>
     </div>
 
     <!-- START: TESTIMONIALS -->
