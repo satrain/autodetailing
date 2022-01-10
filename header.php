@@ -18,7 +18,7 @@
         <main>
             <header>
                 <div class="header-logo">
-                    <a href="/"><img src="/wp-content/uploads/2021/10/autodetailing-logo.png" alt="Auto Detailing Logo"></a>
+                    <a href="/"><img src="/wp-content/uploads/2022/01/autodetailing-logo.png" alt="Auto Detailing Logo"></a>
                 </div>
                 <div class="header-right-side hide-xs">
                     <a class="btn btn-primary header-btn" href="#">Get a Quote</a>
