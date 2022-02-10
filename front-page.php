@@ -6,8 +6,8 @@
 <div class="main homepage-main">
     <div class="hero">
         <div class="hero-copy">
-            <h1>Lorem Ipsum is dummy text<span>.</span></h1>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+            <h1>The best mobile detailing company in North county of San Diego!</h1>
+            <p>If you need professional mobile detailing in San Marcos, Escondido, Carlsbad don't look any further, hire us!</p>
             <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
         </div>
         <div class="hero-mock"></div>
@@ -18,17 +18,17 @@
         <div class="container why-us-wrapper">
             <div class="why-us-item">
                 <img src="/wp-content/uploads/2022/01/mdi_account.png" alt="">
-                <h3>Lorem Ipsum</h3>
+                <h3>Proffesional</h3>
                 <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
             </div>
             <div class="why-us-item">
                 <img src="/wp-content/uploads/2022/01/mdi_car.png" alt="">
-                <h3>Est ce Que</h3>
+                <h3>Experienced</h3>
                 <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
             </div>
             <div class="why-us-item">
                 <img src="/wp-content/uploads/2022/01/bpmn_service.png" alt="">
-                <h3>Un Grande</h3>
+                <h3>Reliable</h3>
                 <p class="btn-p-wrapper"><a class="btn btn-primary" href="/price-calculator/">Get a Quote</a></p>
             </div>
         </div>
@@ -43,33 +43,33 @@
                 <div onclick="location.href='/services/'" class="service-item">
                     <p>Full Detailing</p>
                     <ul>
-                        <li>List item One</li>
-                        <li>List item Two</li>
-                        <li>List item Three</li>
-                        <li>List item Four</li>
-                        <li>List item Five</li>
+                        <li>Clay bar treatment</li>
+                        <li>Polish/wax exterior</li>
+                        <li>Steam cleaning leather and vinyl</li>
+                        <li>Shampooing carpets and mets</li>
+                        <li>Conditioning leather and vinyl</li>
                     </ul>
                     <a class="btn btn-secondary" href="/services/">View More</a>
                 </div>
                 <div onclick="location.href='/services/'" class="service-item">
                     <p>Ceramic Coating</p>
                     <ul>
-                        <li>List item One</li>
-                        <li>List item Two</li>
-                        <li>List item Three</li>
-                        <li>List item Four</li>
-                        <li>List item Five</li>
+                        <li>Paint preparation</li>
+                        <li>Paint correction</li>
+                        <li>Ceramic coating installation</li>
+                        <li>Protect your investment</li>
+                        <li>Harder and better looking finish</li>
                     </ul>
                     <a class="btn btn-secondary" href="/services/">View More</a>
                 </div>
                 <div onclick="location.href='/services/'" class="service-item">
                     <p>PPF</p>
                     <ul>
-                        <li>List item One</li>
-                        <li>List item Two</li>
-                        <li>List item Three</li>
+                        <li>Paint preparation</li>
+                        <li>PPF and wrap installation</li>
+                    <!--    <li>List item Three</li>
                         <li>List item Four</li>
-                        <li>List item Five</li>
+                        <li>List item Five</li> -->
                     </ul>
                     <a class="btn btn-secondary" href="/services/">View More</a>
                 </div>
