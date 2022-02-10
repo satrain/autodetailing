@@ -39,14 +39,14 @@ get_header();
                             <div class="select-size-wrapper"></div>
                         </div>
 
-                        <div class="booking-field package">
-                            <h3>Select package</h3>
-                            <div class="select-package-wrapper"></div>
-                        </div>
-
                         <div class="booking-field condition">
                             <h3>Select condition</h3>
                             <div class="select-condition-wrapper"></div>
+                        </div>
+
+                        <div class="booking-field package">
+                            <h3>Select package</h3>
+                            <div class="select-package-wrapper"></div>
                         </div>
 
                         <div class="booking-field condition">

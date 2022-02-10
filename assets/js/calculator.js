@@ -664,8 +664,17 @@ for (let i = 0; i < bookingSelectSize.length; i++) {
 const bookingSelectPackage = document.querySelectorAll(".select-package-wrapper .single-card")
 
 for (let i = 0; i < bookingSelectPackage.length; i++) {
-    bookingSelectPackage[i].addEventListener("click", () => {
-        paintTheCards(i, bookingSelectPackage)
+    // bookingSelectPackage[i].addEventListener("click", () => {
+    //     paintTheCards(i, bookingSelectPackage)
+
+    // })
+
+    bookingSelectPackage[i].addEventListener("click", (e) => {
+        let infoBtn = bookingSelectPackage[i].querySelector('.info-icon')
+        if (e.target != infoBtn) {
+            paintTheCards(i, bookingSelectPackage)
+        }
+
 
     })
 }
@@ -676,8 +685,8 @@ const bookingSelectCondition = document.querySelectorAll(".select-condition-wrap
 for (let i = 0; i < bookingSelectCondition.length; i++) {
     bookingSelectCondition[i].addEventListener("click", () => {
         paintTheCards(i, bookingSelectCondition)
-
     })
+
 }
 
 
@@ -688,12 +697,27 @@ const bookingSelectExtras = document.querySelectorAll(".select-extras-wrapper .s
 for (let i = 0; i < bookingSelectExtras.length; i++) {
     bookingSelectExtras[i].addEventListener("click", (e) => {
         let infoBtn = bookingSelectExtras[i].querySelector('.info-icon')
-        if(e.target != infoBtn) {
+        if (e.target != infoBtn) {
+            console.log("Mladen indijanac")
             paintTheCardsWithNoRemoveClass(i, bookingSelectExtras)
         }
 
     })
 }
+
+
+// KORISCENJE NOVE FUNKCIJE ZA SELEKTOVANJE, BEZ REMOVE KLASE NA OSTALIM ELEMTIMA
+// const bookingSelectOther = document.querySelectorAll(".select-extras-wrapper .single-card")
+
+// for (let i = 0; i < bookingSelectOther.length; i++) {
+//     bookingSelectOther[i].addEventListener("click", (e) => {
+//         let infoBtn = bookingSelectOther[i].querySelector('.info-icon')
+//         if (e.target != infoBtn) {
+//             paintTheCardsWithNoRemoveClass(i, bookingSelectOther)
+//         }
+
+//     })
+// }
 
 
 
@@ -714,8 +738,11 @@ for (let i = 0; i < bookingSelectExtras.length; i++) {
 const bookingRvPackage = document.querySelectorAll(".select-package-rv-wrapper .single-card")
 
 for (let i = 0; i < bookingRvPackage.length; i++) {
-    bookingRvPackage[i].addEventListener("click", () => {
-        paintTheCards(i, bookingRvPackage)
+    bookingRvPackage[i].addEventListener("click", (e) => {
+        let infoBtn = bookingRvPackage[i].querySelector('.info-icon')
+        if (e.target != infoBtn) {
+            paintTheCards(i, bookingRvPackage)
+        }
 
     })
 }
@@ -739,8 +766,11 @@ for (let i = 0; i < bookingBoatSize.length; i++) {
 const bookingBoatPackage = document.querySelectorAll(".select-package-boat-wrapper .single-card")
 
 for (let i = 0; i < bookingBoatPackage.length; i++) {
-    bookingBoatPackage[i].addEventListener("click", () => {
-        paintTheCards(i, bookingBoatPackage)
+    bookingBoatPackage[i].addEventListener("click", (e) => {
+        let infoBtn = bookingBoatPackage[i].querySelector('.info-icon')
+        if (e.target != infoBtn) {
+            paintTheCards(i, bookingBoatPackage)
+        }
 
     })
 }
@@ -1356,8 +1386,12 @@ for (let i = 0; i < calcTypeVehicle.length; i++) {
 let subServices = document.querySelectorAll(".single-card")
 
 for (let i = 0; i < subServices.length; i++) {
-    subServices[i].addEventListener("click", () => {
+    subServices[i].addEventListener("click", (e) => {
         console.log(korpa)
+
+        if (e.target.classList.contains("info-icon")) {
+            return
+        }
 
         updateTotal()
 
